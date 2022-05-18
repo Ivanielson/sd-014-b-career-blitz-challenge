@@ -1,0 +1,20 @@
+  // REF: https://app.betrybe.com/course/back-end/mongodb-com-nodejs-e-poo/mongodb-e-poo/91006798-2877-4004-9cf5-d2d72a859272/conteudos/36237ca5-7ba2-40e3-9cb7-5af2159d3bef/estrutura-da-aplicacao/e10be8be-769b-4e4d-b3cb-aa56e665aab2?use_case=side_bar
+  {
+    "compilerOptions": {
+      "outDir": "./dist",
+      "rootDir": ".",
+      "target": "es2019",
+      "module": "commonjs",
+      "typeRoots": [
+        "src/@types",
+        "./node_modules/@types"
+      ],
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "strict": true,
+      "skipLibCheck": true
+    },
+    "exclude": [
+      "node_modules"
+    ]
+  }
