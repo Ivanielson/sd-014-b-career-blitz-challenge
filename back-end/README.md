@@ -1,6 +1,6 @@
 ## Documentação da API
 
-#### Retorna todos os itens
+#### Retorna todas as tasks
 
 ```http
   GET /tasks
@@ -62,7 +62,7 @@
 
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
-| `id`      | `object` | **Obrigatório**. O ID da task que você quer atualizar |
+| `id`      | `string` | **Obrigatório**. O ID da task que você quer atualizar |
 | `body`      | `object` | **Obrigatório**. O body com pelo menos um campo que você quer atualizar |
 
 > Formato do body:
