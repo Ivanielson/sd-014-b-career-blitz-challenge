@@ -1,8 +1,13 @@
 import './App.css';
+import TaskProvider from './context/TaskProvider';
 
 function App() {
   return (
-    <h1>Career Blitz Challenge</h1>
+    <main>
+      <TaskProvider>
+        <h1>Career Blitz Challenge</h1>
+      </TaskProvider>
+    </main>
   );
 }
 
