@@ -1,8 +1,18 @@
 import React, { useContext, useEffect } from 'react';
 import TaskContext from '../../context/TaskContext';
+import { deleteTask } from '../../services/request';
 
 function TaskTable() {
-  const { data, getTasks } = useContext(TaskContext);
+  const { data, getTasks, setLoading } = useContext(TaskContext);
+  const MILLISECONDS = 1000;
+
+  async function handleClickRemove(id) {
+    await deleteTask(`/tasks/${id}`);
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, MILLISECONDS);
+  }
 
   useEffect(() => {
     getTasks();
@@ -15,8 +25,9 @@ function TaskTable() {
         <thead>
           <th>Id</th>
           <th>Task</th>
-          <th>Data</th>
+          <th>Date</th>
           <th>Status</th>
+          <th>Remove</th>
         </thead>
         <tbody>
           {
@@ -26,6 +37,14 @@ function TaskTable() {
                 <td key={ _id }>{ task }</td>
                 <td key={ _id }>{ createdAt }</td>
                 <td key={ _id }>{ status }</td>
+                <td key={ _id }>
+                  <button
+                    type="button"
+                    onClick={ () => handleClickRemove(_id) }
+                  >
+                    Remove
+                  </button>
+                </td>
               </tr>
             ))
           }
