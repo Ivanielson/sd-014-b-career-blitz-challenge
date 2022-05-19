@@ -8,3 +8,12 @@ export const getAllTasks = async (endpoint) => {
   const { data } = await api.get(endpoint);
   return data;
 };
+
+export const createTask = async (endpoint, body) => {
+  try {
+    await api.post(endpoint, body);
+    return { message: 'Task successfully registered!' }
+  } catch (error) {
+    return { error: error.message };
+  }
+};
