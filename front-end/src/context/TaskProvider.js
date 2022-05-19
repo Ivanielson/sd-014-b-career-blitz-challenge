@@ -5,6 +5,7 @@ import { getAllTasks } from '../services/request';
 
 function TaskProvider({ children }) {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   async function getTasks() {
     const tasks = await getAllTasks('/tasks');
@@ -17,6 +18,9 @@ function TaskProvider({ children }) {
 
   const context = {
     data,
+    loading,
+    setLoading,
+    getTasks,
   };
 
   return (
