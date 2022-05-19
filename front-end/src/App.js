@@ -1,13 +1,15 @@
 import './App.css';
 import TaskProvider from './context/TaskProvider';
+import Router from './routes/Routes';
 
 function App() {
   return (
-    <main>
-      <TaskProvider>
+    <TaskProvider>
+      <main>
         <h1>Career Blitz Challenge</h1>
-      </TaskProvider>
-    </main>
+        <Router />
+      </main>
+    </TaskProvider>
   );
 }
 
