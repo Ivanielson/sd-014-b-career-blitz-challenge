@@ -23,3 +23,5 @@ class TaskModel extends MongoModel<Task> {
 }
 
 export default TaskModel;
+
+// Ref: https://mongoosejs.com/docs/defaults.html
