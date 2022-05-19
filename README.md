@@ -21,7 +21,7 @@ O Career Blitz Challenge é uma aplicação que possibilita a pessoa usuária se
 
 ## Instalação
 
-### Instale Career Blitz Challenge com `npm`
+### Instale o Career Blitz Challenge com `npm`
 
 >Obs: É necessario um ambiente docker configurado para seguir esse tutorial de instalação. O docker é utilizado na criação de um container com uma instâcia do mongoDB.
 
