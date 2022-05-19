@@ -5,22 +5,28 @@
   "main": "src/server.ts",
   "scripts": {
     "start": "ts-node-dev src/server.ts",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "docker:db-up": "docker pull mongo && docker run --name mongodb-desafio-blitz -p 27017:27017 -d mongo",
+    "docker:db-down": "docker stop mongodb-desafio-blitz && docker rm mongodb-desafio-blitz"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.1",
     "express-async-errors": "^3.1.1",
+    "http-status-codes": "^2.2.0",
     "mongoose": "^6.3.3",
     "zod": "^3.16.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/node": "^17.0.34",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
+    "dotenv": "^16.0.1",
     "eslint": "^8.15.0",
     "ts-node": "^10.7.0",
     "ts-node-dev": "^1.1.8",
