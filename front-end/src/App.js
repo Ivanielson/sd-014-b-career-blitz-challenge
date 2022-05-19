@@ -1,24 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import TaskProvider from './context/TaskProvider';
+import Router from './routes/Routes';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TaskProvider>
+      <main>
+        <h1>Career Blitz Challenge</h1>
+        <Router />
+      </main>
+    </TaskProvider>
   );
 }
 
