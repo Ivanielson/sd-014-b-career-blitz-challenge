@@ -1,25 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import TaskContext from './TaskContext';
+import { getAllTasks } from '../services/request';
 
 function TaskProvider({ children }) {
   const [data, setData] = useState([]);
 
-  function getTasks() {
-    const tasks = [
-      {
-        _id: "62864e04ded155a010c1b0a3",
-        task: "Assistir Aula Ao vivo",
-        status: "Pendente",
-        createdAt: "2022-05-19T14:01:40.434Z"
-      },
-    ];
+  async function getTasks() {
+    const tasks = await getAllTasks('/tasks');
     setData(tasks);
   }
 
+  useEffect(() => {
+    getTasks();
+  }, []);
+
   const context = {
     data,
-    getTasks,
   };
 
   return (
