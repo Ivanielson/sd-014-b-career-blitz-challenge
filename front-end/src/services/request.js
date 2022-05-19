@@ -17,3 +17,12 @@ export const createTask = async (endpoint, body) => {
     return { error: error.message };
   }
 };
+
+export const updateTask = async (endpoint, body) => {
+  try {
+    await api.put(endpoint, body);
+    return { message: 'Task successfully updated!' }
+  } catch (error) {
+    return { error: error.message };
+  }
+};
