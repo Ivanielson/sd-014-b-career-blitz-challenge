@@ -1,0 +1,24 @@
+version: '3.9'
+services:
+  frontend:
+    build: ./front-end
+    container_name: frontend
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend
+  backend:
+    build: ./back-end
+    container_name: backend
+    ports:
+      - 3001:3001
+    depends_on:
+      - mongoDB
+    environment:
+      - PORT=3001
+      - MONGO_URI=mongodb://localhost:27017/BlitzChallenge
+  mongoDB:
+    image: mongo:5.0.6
+    container_name: mongoDB
+    ports:
+      - 27017:27017
