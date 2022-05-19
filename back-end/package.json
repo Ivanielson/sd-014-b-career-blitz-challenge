@@ -5,7 +5,8 @@
   "main": "src/server.ts",
   "scripts": {
     "start": "ts-node-dev src/server.ts",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "docker:db-up": "docker pull mongo && docker run --name mongodb-desafio-blitz -p 27017:27017 -d mongo"
   },
   "keywords": [],
   "author": "",
