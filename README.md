@@ -1,5 +1,5 @@
 
-# Career Blitz Challenge
+# :rotating_light: Career Blitz Challenge :rotating_light:
 
 O Career Blitz Challenge é uma aplicação que possibilita a pessoa usuária se organizar por meio de uma lista de tarefas.
 
