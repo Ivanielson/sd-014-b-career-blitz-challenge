@@ -16,12 +16,12 @@ abstract class Service<T> {
     return this.model.getAll();
   }
 
-  public async update(id: string, obj: T): Promise<T | null | ServiceError> {
-    return this.model.update(id, obj);
+  public async update(_id: string, obj: T): Promise<T | null | ServiceError> {
+    return this.model.update(_id, obj);
   }
 
-  public async deleteById(id: string): Promise<T | null> {
-    return this.model.deleteById(id);
+  public async deleteById(_id: string): Promise<T | null> {
+    return this.model.deleteById(_id);
   }
 }
 
