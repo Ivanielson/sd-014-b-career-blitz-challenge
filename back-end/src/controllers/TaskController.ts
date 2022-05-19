@@ -1,4 +1,4 @@
-import { Response } from 'express';
+import { Request, Response } from 'express';
 import Controller, { RequestWithBody, ResponseError } from '.';
 import TaskService from '../services/TaskService';
 import { Task } from '../interfaces/TaskInterface';
@@ -56,6 +56,23 @@ class TaskController extends Controller<Task> {
         return res.status(StatusCodes.BAD_REQUEST).json(updateTask);
       }
       return res.status(StatusCodes.CREATED).json(updateTask);
+    } catch (error) {
+      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+        error: this.errors.internal,
+      });
+    }
+  };
+
+  deleteById = async (
+    req: Request<{ id: string; }>,
+    res: Response<Task | ResponseError>,
+  ): Promise<typeof res> => {
+    const { id } = req.params;
+    try {
+      const deleteTask = await this.service.deleteById(id);
+      return deleteTask
+      ? res.status(StatusCodes.NO_CONTENT).end()
+      : res.status(StatusCodes.NOT_FOUND).json({ error: this.errors.notFound });
     } catch (error) {
       return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
         error: this.errors.internal,
