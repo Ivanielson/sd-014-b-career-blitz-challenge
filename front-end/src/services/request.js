@@ -26,3 +26,12 @@ export const updateTask = async (endpoint, body) => {
     return { error: error.message };
   }
 };
+
+export const deleteTask = async (endpoint) => {
+  try {
+    await api.delete(endpoint);
+    return { message: 'Task successfully removed!' }
+  } catch (error) {
+    return { error: error.message };
+  }
+};
