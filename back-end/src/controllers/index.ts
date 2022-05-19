@@ -44,7 +44,7 @@ abstract class Controller<T> {
   };
 
   abstract update(
-    req: Request<{ id: string; } & RequestWithBody<T>>,
+    req: RequestWithBody<T>,
     res: Response<T | ResponseError>,
   ): Promise<typeof res>;
 
