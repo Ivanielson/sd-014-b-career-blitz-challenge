@@ -10,6 +10,10 @@ const taskSchema = new Schema<TaskDocument>({
     type: String,
     default: 'Pendente'
   },
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  }
 },  { versionKey: false });
 
 class TaskModel extends MongoModel<Task> {
