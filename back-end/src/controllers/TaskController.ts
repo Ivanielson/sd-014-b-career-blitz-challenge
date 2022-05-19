@@ -41,6 +41,27 @@ class TaskController extends Controller<Task> {
       });
     }
   };
+
+  update = async (
+    req: RequestWithBody<Task>,
+    res: Response<Task | ResponseError>,
+  ): Promise<typeof res> => {
+    const { params: { id }, body } = req;
+    try {
+      const updateTask = await this.service.update(id, body);
+      if (!updateTask) {
+        return res.status(StatusCodes.NOT_FOUND).json({ error: this.errors.notFound });
+      }
+      if ('error' in updateTask) {
+        return res.status(StatusCodes.BAD_REQUEST).json(updateTask);
+      }
+      return res.status(StatusCodes.CREATED).json(updateTask);
+    } catch (error) {
+      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+        error: this.errors.internal,
+      });
+    }
+  };
 }
 
 export default TaskController;
