@@ -14,7 +14,7 @@ O Career Blitz Challenge é uma aplicação que possibilita a pessoa usuária se
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 
-**Front-end:** React, Context API, Styled-components, Bootstrap, Moment
+**Front-end:** React, Context API, Styled-components, Bootstrap
 
 **Back-end:** Node, Express, Typescript, Docker, Mongoose(MongoDB)
 
@@ -23,7 +23,7 @@ O Career Blitz Challenge é uma aplicação que possibilita a pessoa usuária se
 
 ### Instale o Career Blitz Challenge com `npm`
 
->Obs: É necessario um ambiente docker configurado para seguir esse tutorial de instalação. O docker é utilizado na criação de um container com uma instâcia do mongoDB.
+>Obs: No tutorial de instalação, utilizo o **Docker** na criação de um container com uma instâcia do mongoDB, para esse processo é necessário ter um ambiente **Docker** configurado na sua máquina. Se você tiver uma instâcia do mongoDB instalada na sua máquina, não é necessário a utilização do **Docker**.
 
 1. Clone o projeto para um diretório do seu computador, utilizando o seguinte comando no seu terminal:
 
@@ -51,7 +51,7 @@ npm install
 
 5. Execute o seguinte comando para criar um container docker com uma instância do mongoDB:
 
-> Caso você tenha uma instância do mongoDB instalada na sua máquina, será necessario apenas renomear o arquivo **.env.example** para **.env** e configurar a seguinte variavel de ambiente com os dados do seu mongoDB: `MONGO_URI=mongodb://user:password@localhost:27017/BlitzChallenge`. caso não tenha usuário e senha, passe a url sem esses valores na variavel. Ex. `MONGO_URI=mongodb://localhost:27017/BlitzChallenge`.
+> Renomei o arquivo **.env.example** para **.env** e configure a variavel de ambiente com os dados do mongoDB. Ex1. `MONGO_URI=mongodb://localhost:27017/BlitzChallenge`. Caso você tenha uma instância do mongoDB instalada na sua máquina não é necessário executar esse comando, apenas configure a variavel de ambiente como as credenciais do seu mongoDB. Ex2. `MONGO_URI=mongodb://user:password@localhost:27017/BlitzChallenge`. Se não houver usuário e senha, use a as configurações do Ex1.
 
 
 ```
