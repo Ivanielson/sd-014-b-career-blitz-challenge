@@ -148,20 +148,6 @@ webpack compiled successfully
 
 > Obs: Caso a aplicação não abra no navegador automaticamente, acesse pela url(http://localhost:3000) na barra de endereço do seu navegador.
 
-## Informações sobre o tutorial de instalação e desenvolvimento da aplicação
-
-> O tutorial de instalação foi criado executando os comandos na seguinte versão do Ubuntu:
-
-| Distributor ID | Description        | Release | Codename |
-| -------------- | ------------------ | ------- | -------- |
-| Ubuntu         | Ubuntu 20.04.3 LTS | 20.04   | focal    |
-
-> **Versões** utilizadas no desenvolvimento do desafio:
-
-| Nodejs   | Docker   | Docker-compose  | npm    |
-| -------- | -------- | --------------- | ------ |
-| v14.16.1 | 20.10.12 | 1.29.2          | 7.18.1 |
-
 ## Deinstalação
 
 1. Para parar a execução da aplicação use o seguinte comando no terminal:
@@ -181,6 +167,20 @@ webpack compiled successfully
 ```
 npm run docker:db-down
 ```
+
+## Informações sobre o tutorial de instalação e desenvolvimento do desafio
+
+> O tutorial de instalação foi criado executando os comandos na seguinte versão do Ubuntu:
+
+| Distributor ID | Description        | Release | Codename |
+| -------------- | ------------------ | ------- | -------- |
+| Ubuntu         | Ubuntu 20.04.3 LTS | 20.04   | focal    |
+
+> **Versões** utilizadas no desenvolvimento do desafio:
+
+| Nodejs   | Docker   | Docker-compose  | npm    |
+| -------- | -------- | --------------- | ------ |
+| v14.16.1 | 20.10.12 | 1.29.2          | 7.18.1 |
 
 ## Referência
 
