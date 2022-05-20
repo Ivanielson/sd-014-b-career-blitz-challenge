@@ -9,11 +9,11 @@ function Task() {
 
   return (
     <section>
-      <div>
+      <div className="container mt-4">
         <h2>Adiciona Uma Nova Tarefa</h2>
         <TaskForm />
       </div>
-      <div>
+      <div className="container mt-4">
         <h2>Lista de Tarefa</h2>
         { loading ? <Loading /> : <TaskTable /> }
       </div>
