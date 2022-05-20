@@ -12,9 +12,9 @@ O Career Blitz Challenge é uma aplicação que possibilita a pessoa usuária se
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
-![Mocha](https://img.shields.io/badge/-mocha-%238D6748?style=for-the-badge&logo=mocha&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 
-**Front-end:** React, Context API, styled components
+**Front-end:** React, Context API, Styled-components, Bootstrap, Moment
 
 **Back-end:** Node, Express, Typescript, Docker, Mongoose(MongoDB)
 
@@ -50,6 +50,9 @@ npm install
 ```
 
 5. Execute o seguinte comando para criar um container docker com uma instância do mongoDB:
+
+> Caso você tenha uma instância do mongoDB instalada na sua máquina, será necessario apenas renomear o arquivo **.env.example** para **.env** e configurar a seguinte variavel de ambiente com os dados do seu mongoDB: `MONGO_URI=mongodb://user:password@localhost:27017/BlitzChallenge`. caso não tenha usuário e senha, passe a url sem esses valores na variavel. Ex. `MONGO_URI=mongodb://localhost:27017/BlitzChallenge`.
+
 
 ```
 npm run docker:db-up
@@ -161,5 +164,17 @@ webpack compiled successfully
 npm run docker:db-down
 ```
 
+## Referência
 
-## :construction: ...Em Construção... :construction:
+- [Cheat sheet docker-compose](https://dockerlabs.collabnix.com/docker/cheatsheet/)
+- [docker-compose up](https://docs.docker.com/compose/reference/up/)
+
+- [docker-compose down](https://docs.docker.com/compose/reference/down/)
+
+- [Padrões de commits](https://github.com/iuricode/padroes-de-commits)
+- [Markdown](https://pt.wikipedia.org/wiki/Markdown)
+- [Markdown github cheat sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+- [MongoDB com Node.js e POO - Course(Trybe)](https://app.betrybe.com/course/back-end/mongodb-com-nodejs-e-poo/mongodb-e-poo/91006798-2877-4004-9cf5-d2d72a859272/o-que-vamos-aprender/4ccdeb02-e6f9-4363-bf9d-c0988bed0820?use_case=calendar)
+- [Declaring Defaults in Your Schema - Mangoose](https://mongoosejs.com/docs/defaults.html#declaring-defaults-in-your-schema)
+- [React Roter Dom - Switch](https://v5.reactrouter.com/web/api/Switch)
+- [Styled-components - Animations](https://styled-components.com/docs/basics#animations)
