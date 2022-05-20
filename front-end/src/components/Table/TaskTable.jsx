@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import TaskContext from '../../context/TaskContext';
 import { deleteTask } from '../../services/request';
+import moment from 'moment';
 
 function TaskTable() {
   const { data, getTasks, setLoading } = useContext(TaskContext);
@@ -35,7 +36,7 @@ function TaskTable() {
               <tr>
                 <td key={ _id }>{ _id }</td>
                 <td key={ _id }>{ task }</td>
-                <td key={ _id }>{ createdAt }</td>
+                <td key={ _id }>{ moment(createdAt).format('DD/MM/YYYY') }</td>
                 <td key={ _id }>{ status }</td>
                 <td key={ _id }>
                   <button
