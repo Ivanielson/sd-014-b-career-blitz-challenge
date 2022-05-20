@@ -21,37 +21,39 @@ function TaskTable() {
   }, []);
 
   return (
-    <section>
-      <table>
-        <thead>
-          <th>Id</th>
-          <th>Task</th>
-          <th>Date</th>
-          <th>Status</th>
-          <th>Remove</th>
-        </thead>
-        <tbody>
-          {
-            data.map(({ _id, task, createdAt, status }) => (
-              <tr>
-                <td key={ _id }>{ _id }</td>
-                <td key={ _id }>{ task }</td>
-                <td key={ _id }>{ moment(createdAt).format('DD/MM/YYYY') }</td>
-                <td key={ _id }>{ status }</td>
-                <td key={ _id }>
-                  <button
-                    type="button"
-                    onClick={ () => handleClickRemove(_id) }
-                  >
-                    Remove
-                  </button>
-                </td>
-              </tr>
-            ))
-          }
-        </tbody>
-      </table>
-    </section>
+    <div className='container'>
+      <section className='row'>
+        <table className='table table-striped'>
+          <thead>
+            <th>Id</th>
+            <th>Task</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Remove</th>
+          </thead>
+          <tbody>
+            {
+              data.map(({ _id, task, createdAt, status }) => (
+                <tr>
+                  <td key={ _id }>{ _id }</td>
+                  <td key={ _id }>{ task }</td>
+                  <td key={ _id }>{ moment(createdAt).format('DD/MM/YYYY') }</td>
+                  <td key={ _id }>{ status }</td>
+                  <td key={ _id }>
+                    <button
+                      type="button"
+                      onClick={ () => handleClickRemove(_id) }
+                    >
+                      Remove
+                    </button>
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </section>
+    </div>
   );
 }
 
