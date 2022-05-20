@@ -142,6 +142,10 @@ To create a production build, use npm run build.
 webpack compiled successfully
 ```
 
+**Você verá a aplicação em execução:**
+
+![Exibe uma imagem do tipo gif, com um demostração da aplicação rodando](./desafio-blitz.gif)
+
 > Obs: Caso a aplicação não abra no navegador automaticamente, acesse pela url(http://localhost:3000) na barra de endereço do seu navegador.
 
 ## Deinstalação
