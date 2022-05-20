@@ -21,7 +21,7 @@ function TaskTable() {
   }, []);
 
   return (
-    <div className='container'>
+    <div className='container mt-5'>
       <section className='row'>
         <table className='table table-striped'>
           <thead>
@@ -41,10 +41,11 @@ function TaskTable() {
                   <td key={ _id }>{ status }</td>
                   <td key={ _id }>
                     <button
+                      className='btn btn-danger m-1'
                       type="button"
                       onClick={ () => handleClickRemove(_id) }
                     >
-                      Remove
+                      <i className="bi bi-trash"> </i>
                     </button>
                   </td>
                 </tr>
