@@ -11,9 +11,10 @@ const rotate = keyframes`
 `;
 
 const LoadingRotate = styled.div`
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
   animation: ${rotate} 2s linear infinite;
-  padding: 2rem 1rem;
   font-size: 2.3rem;
 `;
 
