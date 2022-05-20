@@ -21,18 +21,24 @@ function TaskForm() {
   }
 
   return (
-    <form>
-      <label htmlFor="task">
+    <form className="container mt-5 mb-5">
+      <div className="input-group mb-3 col-md-6">
         <input
+          className="form-control"
+          placeholder="Nova Tarefa"
           id="task"
           type="text"
           value={ task }
           onChange={ ({ target: { value } }) => setTask(value) }
         />
-      </label>
-      <button type="button" disabled={ valid } onClick={ handleClick }>
-        Adicionar
-      </button>
+        <button
+          className="btn btn-outline-secondary"
+          type="button"
+          disabled={ valid } onClick={ handleClick }
+        >
+          <i class="bi bi-pencil-square"> Adicionar</i>
+        </button>
+      </div>
     </form>
   );
 }
