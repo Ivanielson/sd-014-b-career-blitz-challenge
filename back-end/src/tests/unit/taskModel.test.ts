@@ -88,4 +88,39 @@ describe('Camada Model de Task - Casos de sucesso', () => {
       expect(newTask).to.be.have.a.property('status');
     });
   });
+
+  describe('Método update de task - Casos de sucesso', () => {
+    const taskUpdate = {
+      ...taskSuccess[0],
+      task: 'Assistir aula ao vivo às 16h',
+      status: 'Pronto',
+    };
+    const id = taskSuccess[0]._id.toString();
+    const payload = {
+      task: 'Assistir aula ao vivo às 16h',
+      status: 'Pronto'
+    };
+    before(async () => {
+      sinon.stub(mongoose.Model, 'findOneAndUpdate').resolves(taskUpdate);
+    });
+
+    after(() => {
+      (mongoose.Model.findOneAndUpdate as sinon.SinonStub).restore();
+    });
+
+    it('Retorna um objeto com as propriedades atualizadas', async () => {
+      const updateTask = await taskModel.update(id, payload);
+      expect(updateTask).to.be.have.a('object');
+      expect(updateTask?.status).to.be.equal('Pronto');
+      expect(updateTask?.task).to.be.equal('Assistir aula ao vivo às 16h');
+    });
+
+    it('Retorna um objeto com as propriedades corretas', async () => {
+      const updateTask = await taskModel.update(id, payload);
+      expect(updateTask).to.be.have.a.property('_id');
+      expect(updateTask).to.be.have.a.property('task');
+      expect(updateTask).to.be.have.a.property('createdAt');
+      expect(updateTask).to.be.have.a.property('status');
+    });
+  });
 });
