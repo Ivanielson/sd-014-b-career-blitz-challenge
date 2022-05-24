@@ -82,6 +82,11 @@ describe('Camada services de task', () => {
     before(async () => {
       sinon.stub(taskModel, 'create').resolves(taskObj);
     });
+
+    after(() => {
+      (taskModel.create as sinon.SinonStub).restore();
+    });
+
     describe('Se o método create receber os dados corretos da requisição', () => {
       it('Retorna um objeto com a task cadastrada', async () => {
         const payload = { task: 'Momento inicial às 14h'};
@@ -97,6 +102,63 @@ describe('Camada services de task', () => {
         expect(newTask).to.be.have.a.property('task');
         expect(newTask).to.be.have.a.property('createdAt');
         expect(newTask).to.be.have.a.property('status');
+      });
+    });
+  });
+
+  describe('Método update de task - Caso de erro', () => {
+    const id = taskSuccess[0]._id.toString();
+    before(() => {
+      sinon.stub(TaskSchema, 'safeParse').resolves(new ZodError([]));
+    });
+
+    after(() => {
+      (TaskSchema.safeParse as sinon.SinonStub).restore();
+    });
+
+    describe('Se o método update não receber os dados corretos da requisição', () => {
+      it('Retorna um objeto com a propriedade "error"', async () => {
+        const taskUpdate = await taskService.update(id, {} as any);
+        expect(taskUpdate).to.be.have.a('object');
+        expect(taskUpdate).to.be.have.a.property('error');
+      });
+    });
+  });
+
+  describe('Método update de task - Caso de sucesso', () => {
+    const taskUpdate = {
+      ...taskSuccess[1],
+      task: 'Estudar redux nas seguntas e terças durante 1:30h',
+      status: 'Em andamento',
+    };
+
+    const id = taskSuccess[1]._id.toString();
+
+    const payload = {
+      task: 'Estudar redux nas seguntas e terças durante 1:30h',
+      status: 'Em andamento',
+    };
+
+    before(async () => {
+      sinon.stub(taskModel, 'update').resolves(taskUpdate);
+    });
+
+    after(() => {
+      (taskModel.update as sinon.SinonStub).restore();
+    });
+    describe('Se o método update receber os dados corretos da requisição', () => {
+      it('Retorna um objeto com a task atualizada', async () => {
+        const updateTask = await taskService.update(id, payload);
+        expect(updateTask).to.be.have.a('object');
+        expect(updateTask).to.be.not.deep.equal(taskSuccess[1]);
+      });
+
+      it('Retorna um objeto com as propriedades corretas', async () => {
+        const updateTask = await taskService.update(id, payload);
+        expect(updateTask).to.be.have.a.property('_id');
+        expect(updateTask).to.be.have.a.property('task');
+        expect(updateTask).to.be.have.a.property('createdAt');
+        expect(updateTask).to.be.have.a.property('status');
       });
     });
   });
