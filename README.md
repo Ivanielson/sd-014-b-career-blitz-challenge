@@ -13,10 +13,12 @@ O Career Blitz Challenge é uma aplicação que possibilita a pessoa usuária se
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+![Mocha](https://img.shields.io/badge/-mocha-%238D6748?style=for-the-badge&logo=mocha&logoColor=white)
+![Chai](https://img.shields.io/badge/chai-A30701?style=for-the-badge&logo=chai&logoColor=white)
 
 **Front-end:** React, Context API, Styled-components, Bootstrap
 
-**Back-end:** Node, Express, Typescript, Docker, Mongoose(MongoDB)
+**Back-end:** Node, Express, Typescript, Docker, Mongoose(MongoDB), Mocha, Chai, Sinon
 
 
 ## Instalação
