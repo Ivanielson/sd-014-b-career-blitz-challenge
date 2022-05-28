@@ -29,25 +29,25 @@ O Career Blitz Challenge é uma aplicação que possibilita a pessoa usuária se
 
 1. Clone o projeto para um diretório do seu computador, utilizando o seguinte comando no seu terminal:
 
-```
+```bash
   git clone git@github.com:Ivanielson/sd-014-b-career-blitz-challenge.git
 ```
 
 2. Acesse o diretório do projeto:
 
-```
+```bash
 cd sd-014-b-career-blitz-challenge/
 ```
 
 3. Acesse o diretório do backend:
 
-```
+```bash
 cd back-end/
 ```
 
 4. Instale as dependências do projeto, executando o seguinte comando:
 
-```
+```bash
 npm install
 ```
 
@@ -56,7 +56,7 @@ npm install
 > Renomei o arquivo **.env.example** para **.env** e configure a variavel de ambiente com os dados do mongoDB. Ex1. `MONGO_URI=mongodb://localhost:27017/BlitzChallenge`. Caso você tenha uma instância do mongoDB instalada na sua máquina não é necessário executar esse comando, apenas configure a variavel de ambiente com as credenciais do seu mongoDB. Ex2. `MONGO_URI=mongodb://user:password@localhost:27017/BlitzChallenge`. Se não houver usuário e senha, use a as configurações do Ex1.
 
 
-```
+```bash
 npm run docker:db-up
 ```
 
@@ -88,7 +88,7 @@ docker.io/library/mongo:latest
 
 6. Inicie a o backend, executando o seguinte comando:
 
-```
+```bash
 npm start
 ```
 
@@ -110,19 +110,19 @@ Ouvindo na porta 3001
 
 8. Agora acesse o diretório do fron-end pelo terminal:
 
-```
+```bash
 cd ../fron-end/
 ```
 
 9. Instale as dependências do projeto, executando o seguinte comando:
 
-```
+```bash
 npm install
 ```
 
 10. Inicie o frontend da aplicação:
 
-```
+```bash
 npm start
 ```
 
@@ -166,8 +166,28 @@ webpack compiled successfully
 
 4. Em seguida execute o comando para **parar** e **remover** o container com a instância do mongoDB:
 
-```
+```bash
 npm run docker:db-down
+```
+
+## Rodando os testes no backend
+
+Primeiro acesse o diretório do backend. Caso esteja na raíz do projeto, use o seguinte comando:
+
+```bash
+cd back-end/
+```
+
+Para rodar os testes, rode o seguinte comando
+
+```bash
+  npm run test:unit
+```
+
+Para verificar a cobertura dos testes, rode o seguinte comando
+
+```bash
+npm run cover:unit
 ```
 
 ## Informações sobre o tutorial de instalação e desenvolvimento do desafio
