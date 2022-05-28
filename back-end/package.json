@@ -6,9 +6,7 @@
   "scripts": {
     "start": "ts-node-dev src/server.ts",
     "test:unit": "mocha -r ts-node/register src/tests/unit/**/*.test.ts --exit -t 8000",
-    "test:integration": "mocha -r ts-node/register src/tests/integration/**/*.test.ts --exit -t 8000",
     "cover:unit": "nyc npm run test:unit",
-    "cover:integration": "nyc npm run test:integration",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "docker:db-up": "docker pull mongo && docker run --name mongodb-desafio-blitz -p 27017:27017 -d mongo",
     "docker:db-down": "docker stop mongodb-desafio-blitz && docker rm mongodb-desafio-blitz"
