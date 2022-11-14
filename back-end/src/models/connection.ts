@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import 'dotenv/config';
 
-const MONGO_DB_URI = 'mongodb://mongodb-desafio-blitz:27017/BlitzChallenge';
+const MONGO_DB_URI = 'mongodb://127.0.0.1:27017/BlitzChallenge';
 
 const connectToDatabase = (
   mongoDatabaseURI = process.env.MONGO_URI
